@@ -2,6 +2,8 @@
 - hosts: 
   - aws-web
   roles:
+    - common
     - httpd24
     - php70
     - mariadb
+    - pure-ftpd

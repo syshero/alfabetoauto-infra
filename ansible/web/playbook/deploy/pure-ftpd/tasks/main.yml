@@ -1,0 +1,12 @@
+---
+- name: Install Pure FTP Server
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - pure-ftpd
+
+- name: Synchronization Pure FTP Server files
+  synchronize:
+    src: files/pure-ftpd
+    dest: /etc/pure-ftpd

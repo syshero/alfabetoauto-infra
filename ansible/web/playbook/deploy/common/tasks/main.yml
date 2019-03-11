@@ -1,0 +1,7 @@
+---
+- name: Install Common Packages
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - wget

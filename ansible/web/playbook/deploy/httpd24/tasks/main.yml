@@ -25,6 +25,18 @@
     group: root
     mode: 0755
 
+- name: Copy alfabetoauto.com.br-ca.crt
+  copy:
+    src: files/alfabetoauto.com.br-ca.crt
+    dest: /etc/pki/tls/certs/server-chain.crt
+    owner: root
+    group: root
+    mode: 0755
+
+
+
+    
+
 - name: Copy ssl.conf
   copy:
     src: files/ssl.conf
