@@ -1,0 +1,42 @@
+---
+- name: Install Apache
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - httpd
+    - httpd-tools
+    - mod_ssl.x86_64
+    - mod_security.x86_64
+
+- name: Copy alfabetoauto.com.br.crt
+  copy:
+    src: files/alfabetoauto.com.br.crt
+    dest: /etc/pki/tls/certs/alfabetoauto.com.br.crt
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy alfabetoauto.com.br.key
+  copy:
+    src: files/alfabetoauto.com.br.key
+    dest: /etc/pki/tls/private/alfabetoauto.com.br.key
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy ssl.conf
+  copy:
+    src: files/ssl.conf
+    dest: /etc/httpd/conf.d/ssl.conf
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy httpd.conf
+  copy:
+    src: files/httpd.conf
+    dest: /etc/httpd/conf/httpd.conf
+    owner: root
+    group: root
+    mode: 0755

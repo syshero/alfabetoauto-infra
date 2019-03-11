@@ -1,0 +1,45 @@
+---
+- name: Install epel
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - epel-release 
+    - yum-utils
+
+- name: Install Repository
+  yum: name=http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+
+- name: Habilitando repo do PHP 7.0
+  command: yum-config-manager --enable remi-php70
+
+- name: Limpando cache do yum
+  command: yum clean metadata
+  args:
+    warn: no
+
+- name: Install PHP 7.0
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - php
+    - php-common
+    - php-opcache
+    - php-mcrypt
+    - php-cli
+    - php-gd
+    - php-curl
+    - php-mysql
+    - php-xml
+    - php70-php-pear.noarch
+    - php70-php-ioncube-loader
+    - php70-php-mbstring.x86_64
+
+- name: Configure PHP
+  copy:
+    src: files/php.ini
+    dest: /etc/php.ini
+    owner: root
+    group: root
+    mode: 0755

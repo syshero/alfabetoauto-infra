@@ -1,0 +1,7 @@
+---
+- hosts: 
+  - aws-web
+  roles:
+    - httpd24
+    - php70
+    - mariadb
