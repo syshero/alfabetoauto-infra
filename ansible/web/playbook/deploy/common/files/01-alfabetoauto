@@ -1,0 +1,14 @@
+0	*/2	*	*	*	wget https://alfabetoauto.com.br/index.php?route=extension/payment/itaushopline/cron >/dev/null 2>&1	    
+0	*	*	*	*	wget https://alfabetoauto.com.br/index.php?route=systemmaster/smbuscape/ordersByStatus >/dev/null 2>&1	    
+0,30	*	*	*	*	wget https://alfabetoauto.com.br/index.php?route=systemmaster/smbuscape/sendCollection >/dev/null 2>&1	    
+*/15	*	*	*	*	wget https://alfabetoauto.com.br/index.php?route=systemmaster/smbuscape/sendInventory >/dev/null 2>&1	    
+0	*	*	*	*	wget https://alfabetoauto.com.br/index.php?route=systemmaster/smbuscape/updateCollection >/dev/null 2>&1	    
+*/10	*	*	*	*	wget https://alfabetoauto.com.br/index.php?route=systemmaster/smsigepwebcorreios/gerarplp >/dev/null 2>&1	    
+*/10	*	*	*	*	wget -q https://alfabetoauto.com.br/index.php?route=module/codemarket_carrinho/rodar >/dev/null 2>&1	    
+12	*	*	*	*	wget -q https://alfabetoauto.com.br/index.php?route=extension/module/rastobjcorreios >/dev/null 2>&1	    
+0,30	*	*	*	*	wget https://alfabetoauto.com.br/index.php?route=product/product/cron_aviseme5 >/dev/null 2>&1	    
+25	*	*	*	*	wget https://alfabetoauto.com.br/mercadolivre_cron >/dev/null 2>&1	    
+*/22	*	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=social_autopilot/scheduled_post&secret_key=ocx24ac8d97fce60361f7a3048c883d6bcb" >/dev/null 2>&1	    
+0	8	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=extension/module/fupw/cron&secret_key=ocx24ac8d97fce60361f7a3048c883d6bcb" >/dev/null 2>&1	    
+30	10	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=extension/module/fupr/cron&secret_key=ocx24ac8d97fce60361f7a3048c883d6bcb" >/dev/null 2>&1	    
+7	*	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=extension/module/sales_motivator/cron&secret_code=12345" >/dev/null 2>&1
