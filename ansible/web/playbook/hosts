@@ -1,2 +1,2 @@
 [aws-web]
-alfabetoauto.com.br ansible_host=18.228.183.109 ansible_connection=ssh ansible_user=centos ansible_become=true mysql_root_password=pwD4FisskfUs25s
+alfabetoauto.com.br ansible_host=18.228.183.109 ansible_connection=ssh ansible_user=centos ansible_become=true mysql_root_password=pwD4FisskfUs25s newrelic_license=a095b39334dd4ce4658d0d3c97227242824d5d3f

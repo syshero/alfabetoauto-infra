@@ -1,0 +1,11 @@
+---
+- name: Install Newrelic Repo
+  yum: name=http://example.com/some_package.rpm
+
+- name: Configure Crontab
+  copy:
+    src: files/01-alfabetoauto
+    dest: /etc/cron.d/01-alfabetoauto
+    owner: root
+    group: root
+    mode: 0755

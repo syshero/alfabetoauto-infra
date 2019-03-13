@@ -35,6 +35,9 @@
     - php70-php-pear.noarch
     - php70-php-ioncube-loader
     - php70-php-mbstring.x86_64
+    - php70-php-pecl-zip
+    - php-zipstream.noarch
+    - php-pecl-zip.x86_64
 
 - name: Configure PHP
   copy:
