@@ -25,3 +25,11 @@
 #   template: src=root.cnf.j2 dest=~/.my.cnf mode=0600
 # - name: Create a New Test DB called MyNewDB
 #   mysql_db: name=MyNewDB state=present login_user=root login_password={{ mysql_root_password }}
+
+- name: Configure my.cnf
+  copy:
+    src: files/my.cnf
+    dest: /etc/my.cnf
+    owner: root
+    group: root
+    mode: 0755
