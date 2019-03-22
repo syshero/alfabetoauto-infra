@@ -1,0 +1,3 @@
+---
+- name: restart_newrelic
+  command: /etc/init.d/newrelic-daemon restart

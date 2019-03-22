@@ -38,6 +38,8 @@
     - php70-php-pecl-zip
     - php-zipstream.noarch
     - php-pecl-zip.x86_64
+    - php70-php-pecl-redis.x86_64
+    - php-pecl-redis.x86_64
 
 - name: Configure PHP
   copy:

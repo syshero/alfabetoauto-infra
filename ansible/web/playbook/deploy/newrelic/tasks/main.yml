@@ -1,11 +1,68 @@
----
-- name: Install Newrelic Repo
-  yum: name=http://example.com/some_package.rpm
-
-- name: Configure Crontab
-  copy:
-    src: files/01-alfabetoauto
-    dest: /etc/cron.d/01-alfabetoauto
+- copy:
+    src: files/newrelic-daemon-8.5.0.235-1.x86_64.rpm
+    dest: /tmp/newrelic-daemon-8.5.0.235-1.x86_64.rpm
     owner: root
     group: root
     mode: 0755
+
+- copy:
+    src: files/newrelic-php5-8.5.0.235-1.x86_64.rpm
+    dest: /tmp/newrelic-php5-8.5.0.235-1.x86_64.rpm
+    owner: root
+    group: root
+    mode: 0755
+
+- copy:
+    src: files/newrelic-php5-common-8.5.0.235-1.noarch.rpm
+    dest: /tmp/newrelic-php5-common-8.5.0.235-1.noarch.rpm
+    owner: root
+    group: root
+    mode: 0755
+
+- copy:
+    src: files/newrelic-infra-1.2.6-1.x86_64.rpm
+    dest: /tmp/newrelic-infra-1.2.6-1.x86_64.rpm
+    owner: root
+    group: root
+    mode: 0755
+
+- name: install newrelic-php5-common-8.5.0.235-1.noarch.rpm
+  yum:
+    name: /tmp/newrelic-php5-common-8.5.0.235-1.noarch.rpm
+    state: present
+
+- name: install newrelic-daemon-8.5.0.235-1.x86_64.rpm
+  yum:
+    name: /tmp/newrelic-daemon-8.5.0.235-1.x86_64.rpm
+    state: present
+    
+- name: install newrelic-php5-8.5.0.235-1.x86_64.rpm
+  yum:    
+    name: /tmp/newrelic-php5-8.5.0.235-1.x86_64.rpm
+    state: present
+
+- name: install newrelic-infra-1.2.6-1.x86_64.rpm
+  yum:    
+    name: /tmp/newrelic-infra-1.2.6-1.x86_64.rpm
+    state: present
+
+- template:
+    src: templates/newrelic.ini.j2
+    dest: /etc/php.d/newrelic.ini
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart_newrelic
+
+- template:
+    src: templates/newrelic-infra.yml.j2
+    dest: /etc/newrelic-infra.yml
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart_newrelic
+
+- name: Delete file /etc/newrelic/newrelic.cfg.template
+  file:
+    path: /etc/newrelic/newrelic.cfg.template
+    state: absent

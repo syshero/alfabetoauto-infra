@@ -1,10 +1,14 @@
 ---
 - hosts: 
   - aws-web
+  vars:
+    # newrelic
+    appname: 'alfabetoauto-web'
+    license: 'a095b39334dd4ce4658d0d3c97227242824d5d3f'
   roles:
-    - common
-    - httpd24
+    # - common
+    # - httpd24
     - php70
-    - mariadb
-    - pure-ftpd
+    # - mariadb
+    # - pure-ftpd
     # - newrelic

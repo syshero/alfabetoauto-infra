@@ -30,6 +30,6 @@
   copy:
     src: files/my.cnf
     dest: /etc/my.cnf
-    owner: root
-    group: root
+    owner: mysql
+    group: mysql
     mode: 0755

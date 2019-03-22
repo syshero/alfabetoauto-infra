@@ -6,6 +6,8 @@
     packages:
     - wget
     - crontabs
+    - nano
+    - redis.x86_64
 
 - name: Configure Crontab
   copy:
