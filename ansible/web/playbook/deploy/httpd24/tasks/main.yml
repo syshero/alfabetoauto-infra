@@ -52,3 +52,11 @@
     owner: root
     group: root
     mode: 0755
+
+- name: Copy tunning.conf
+  copy:
+    src: files/tunning.conf
+    dest: /etc/httpd/conf.d/tunning.conf
+    owner: root
+    group: root
+    mode: 0755

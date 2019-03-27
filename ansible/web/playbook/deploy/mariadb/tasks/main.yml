@@ -30,6 +30,7 @@
   copy:
     src: files/my.cnf
     dest: /etc/my.cnf
-    owner: mysql
-    group: mysql
-    mode: 0755
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart_mysql
