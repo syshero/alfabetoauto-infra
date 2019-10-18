@@ -12,3 +12,4 @@
 0	8	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=extension/module/fupw/cron&secret_key=ocx24ac8d97fce60361f7a3048c883d6bcb" >/dev/null 2>&1	    
 30	10	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=extension/module/fupr/cron&secret_key=ocx24ac8d97fce60361f7a3048c883d6bcb" >/dev/null 2>&1	    
 7	*	*	*	*	wget --quiet --delete-after "https://alfabetoauto.com.br/index.php?route=extension/module/sales_motivator/cron&secret_code=12345" >/dev/null 2>&1
+0	1	*	*	*	/srv/scripts/mysql_backup.sh >/dev/null 2>&1
